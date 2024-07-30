@@ -1,5 +1,7 @@
 # Effect Beginner/Intermediate Workshop By Ethan Niser
 
+- current progress: https://www.youtube.com/watch?v=Lz2J1NBnHK4&t=927s
+
 Follow me on [Twitter](https://twitter.com/ethanniser) and [YouTube](https://www.youtube.com/@ethanniser)
 
 ## USEFUL LINKS
