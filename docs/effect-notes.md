@@ -29,4 +29,39 @@ type SaferFunction<Args, T, E> = (...args: Args) => T | E;
 ```
 
 - however this also comes with someproblems as it becomes harder to discriminate errors.
--
+
+- composing functions with errors:
+  - inner function that might error and outer function that also might error
+  - only operate on value if it is not an error.
+
+```ts
+declare function Inner(): "baz" | "bar" | Error;
+
+function Outer(): number | Error {
+  const result = Inner();
+  if (result instanceof Error) {
+    return result;
+  }
+  return result.length;
+}
+```
+
+- we are forced here to handle errors at every single point, even if we don't care.
+
+### Effects are differnt :
+
+- Effect type has 2 type parameter:
+
+  - Value and Error(default to never)
+
+- so we can transform our previous functions as :
+
+```ts
+declare const foo: Effect<number, never>;
+
+declare const bar: Effect<number, Error>;
+```
+
+- having errors as a first class citizens and owning errors , and can compose errors also.
+
+
